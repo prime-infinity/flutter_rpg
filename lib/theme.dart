@@ -12,15 +12,33 @@ class AppColors {
 }
 
 ThemeData primaryTheme = ThemeData(
-    //seed color
-    colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+  //seed color
+  colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
 
-    //scaffold color
-    scaffoldBackgroundColor: AppColors.secondaryAccent,
+  //scaffold color
+  scaffoldBackgroundColor: AppColors.secondaryAccent,
 
-    //appbar theme colors
-    appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.secondaryColor,
-        foregroundColor: AppColors.textColor,
-        surfaceTintColor: Colors.transparent,
-        centerTitle: true));
+  //appbar theme colors
+  appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.secondaryColor,
+      foregroundColor: AppColors.textColor,
+      surfaceTintColor: Colors.transparent,
+      centerTitle: true),
+
+  textTheme: TextTheme(
+      bodyMedium: TextStyle(
+        color: AppColors.textColor,
+        fontSize: 16,
+        letterSpacing: 1,
+      ),
+      headlineMedium: TextStyle(
+          color: AppColors.titleColor,
+          fontSize: 16,
+          letterSpacing: 1,
+          fontWeight: FontWeight.bold),
+      titleMedium: TextStyle(
+          color: AppColors.titleColor,
+          fontSize: 18,
+          letterSpacing: 2,
+          fontWeight: FontWeight.bold)),
+);
