@@ -23,6 +23,7 @@ class CharacterCard extends StatelessWidget {
               width: 20,
             ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 StyledHeading(character.name),
                 StyledText(character.vocation.title)
