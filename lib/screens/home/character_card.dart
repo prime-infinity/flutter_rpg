@@ -33,8 +33,12 @@ class CharacterCard extends StatelessWidget {
             const Expanded(child: SizedBox()),
             IconButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (ctx) => const Profile()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (ctx) => Profile(
+                              character:
+                                  character) /** accepting params into a route */));
                 },
                 icon: Icon(Icons.arrow_forward, color: AppColors.textColor))
           ],
