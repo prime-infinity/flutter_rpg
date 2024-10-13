@@ -43,7 +43,44 @@ class Profile extends StatelessWidget {
               ]),
             ),
 
-            //weapon and ability
+            //weapon and ability and slogan
+            const SizedBox(
+              height: 20,
+            ),
+            Center(
+              child: Icon(
+                Icons.code,
+                color: AppColors.primaryColor,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Container(
+                width: double.infinity /** full width basically */,
+                padding: const EdgeInsets.all(16),
+                color: AppColors.secondaryColor.withOpacity(0.5),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const StyledHeading("slogan"),
+                    StyledText(character.slogan),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const StyledHeading("weapon of choice"),
+                    StyledText(character.vocation.weapon),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const StyledHeading("unique ability"),
+                    StyledText(character.vocation.ability),
+                    const SizedBox(
+                      height: 10,
+                    )
+                  ],
+                ),
+              ),
+            )
 
             //stats and skills
 
