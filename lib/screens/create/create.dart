@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rpg/models/character.dart';
 import 'package:flutter_rpg/models/vocation.dart';
 import 'package:flutter_rpg/screens/create/vocation_card.dart';
 import 'package:flutter_rpg/screens/home/home.dart';
+import 'package:flutter_rpg/services/character_store.dart';
 import 'package:flutter_rpg/shared/styled_button.dart';
 import 'package:flutter_rpg/shared/styled_text.dart';
 import 'package:flutter_rpg/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
 var uuid = const Uuid();
@@ -84,12 +87,13 @@ class _CreateScreenState extends State<CreateScreen> {
       return;
     }
 
-    /*characters.add(Character(
+    //below, we access a function from our store and add a value to it
+    Provider.of<CharacterStore>(context, listen: false).addCharacter(Character(
       name: _nameController.text.trim(),
       slogan: _sloganController.text.trim(),
       vocation: selectedVocation,
       id: uuid.v4(),
-    ));*/
+    ));
 
     Navigator.push(context, MaterialPageRoute(builder: (ctx) => const Home()));
   }
