@@ -7,4 +7,9 @@ class FirestoreService {
       .withConverter(
           fromFirestore: Character.fromFirestore,
           toFirestore: (Character c, _) => c.toFirestore());
+
+  //add a new character
+  static Future<void> addCharacter(Character character) async {
+    await ref.doc(character.id).set(character); //we can still use the ref.add()
+  }
 }
