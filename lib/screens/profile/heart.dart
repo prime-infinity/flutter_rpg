@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rpg/models/character.dart';
+import 'package:flutter_rpg/theme.dart';
 
 class Heart extends StatefulWidget {
   const Heart({super.key, required this.character});
@@ -28,13 +29,22 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-        onPressed: () {
-          widget.character.toggleIsFav();
-        },
-        icon: Icon(
-          Icons.favorite,
-          color: Colors.grey[800],
-        ));
+    return AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          return IconButton(
+              onPressed: () {
+                _controller.reset();
+                _controller.forward();
+                widget.character.toggleIsFav();
+              },
+              icon: Icon(
+                Icons.favorite,
+                color: widget.character.isFav
+                    ? AppColors.primaryAccent
+                    : Colors.grey[800],
+                size: _sizeAnimation.value,
+              ));
+        });
   }
 }
