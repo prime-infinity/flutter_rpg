@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rpg/models/character.dart';
+import 'package:flutter_rpg/screens/profile/heart.dart';
 import 'package:flutter_rpg/screens/profile/skill_list.dart';
 import 'package:flutter_rpg/screens/profile/stats_table.dart';
 import 'package:flutter_rpg/services/character_store.dart';
@@ -50,6 +51,8 @@ class Profile extends StatelessWidget {
                 )
               ]),
             ),
+
+            Heart(character: character),
 
             //weapon and ability and slogan
             const SizedBox(
