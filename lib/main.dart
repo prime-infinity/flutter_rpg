@@ -24,17 +24,3 @@ void main() async {
   ));
 }
 
-class SandBox extends StatelessWidget {
-  const SandBox({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("sandbox"),
-        backgroundColor: Colors.grey,
-      ),
-      body: const Text("sandbox"),
-    );
-  }
-}
